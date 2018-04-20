@@ -202,16 +202,96 @@ titanic.loc[titanic['pclass'] == 3].plot(ax=axes[2], y='fare', kind='box')
 # Display the plot
 plt.show()
 
+########## Matplot
+
+# Change the line plot below to a scatter plot
+plt.scatter(gdp_cap, life_exp)
+
+# Put the x-axis on a logarithmic scale
+
+plt.xscale('log')
+# Show plot
+plt.show()
+
+### Histogram
+
+# Build histogram with 5 bins
+
+plt.hist(life_exp, bins = 5)
+# Show and clean up plot
+plt.show()
+plt.clf()
+
+# Build histogram with 20 bins
+plt.hist(life_exp, bins = 20)
 
 
+# Show and clean up again
+plt.show()
+plt.clf()
 
 
+### Scatter plot with labelling and title and other aesthetics
+
+# Scatter plot
+plt.scatter(gdp_cap, life_exp)
+
+# Previous customizations
+plt.xscale('log') 
+plt.xlabel('GDP per Capita [in USD]')
+plt.ylabel('Life Expectancy [in years]')
+plt.title('World Development in 2007')
+
+# Definition of tick_val and tick_lab
+tick_val = [1000,10000,100000]
+tick_lab = ['1k','10k','100k']
+
+# Adapt the ticks on the x-axis
+plt.xticks(tick_val, tick_lab)
+
+# After customizing, display the plot
+plt.show()
 
 
+## Bubble plot with size
+
+# Specify c and alpha inside plt.scatter()
+plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2, 
+            c = col, alpha = 0.8)
+
+# Previous customizations
+plt.xscale('log') 
+plt.xlabel('GDP per Capita [in USD]')
+plt.ylabel('Life Expectancy [in years]')
+plt.title('World Development in 2007')
+plt.xticks([1000,10000,100000], ['1k','10k','100k'])
+
+# Show the plot
+plt.show()
 
 
+## Additional Customisation
 
+# Scatter plot
+plt.scatter(x = gdp_cap, y = life_exp, s = np.array(pop) * 2, c = col, alpha = 0.8)
 
+# Previous customizations
+plt.xscale('log') 
+plt.xlabel('GDP per Capita [in USD]')
+plt.ylabel('Life Expectancy [in years]')
+plt.title('World Development in 2007')
+plt.xticks([1000,10000,100000], ['1k','10k','100k'])
+
+# Additional customizations
+plt.text(1550, 71, 'India')
+plt.text(5700, 80, 'China')
+
+# Add grid() call
+
+plt.grid(True)
+
+# Show the plot
+plt.show()
 
 
 
